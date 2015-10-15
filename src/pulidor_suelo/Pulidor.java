@@ -9,7 +9,7 @@ public class Pulidor extends JFrame {
     
     public Pulidor(int x, int y){
         super("Prueba");
-        this.setSize(600,600);
+        this.setSize(x*10,y*10);
         this.setBackground(Color.LIGHT_GRAY);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
