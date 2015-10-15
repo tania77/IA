@@ -15,8 +15,8 @@ public class Suelo extends JPanel {
     
     public Suelo(int filas, int columnas){
         super();
-        this.setSize(400,400);
-        
+        setSize(600,600);
+        setVisible(true);
         Baldosa suelo_[][] = new Baldosa [filas][columnas];
          
         Random rnd = new Random();
