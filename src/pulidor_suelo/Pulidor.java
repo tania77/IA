@@ -21,14 +21,13 @@ public class Pulidor extends JFrame {
         anchura = (int)dimensionPantalla.getWidth();
 
         
-        //this.setLayout(new GridLayout(x,y));
-        this.setSize(altura,anchura);
+        this.setLayout(new GridLayout(x,y));
+        this.setSize(anchura, altura);
         this.setBackground(Color.LIGHT_GRAY);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        //his.add(new Suelo(x,y), BorderLayout.CENTER);
         this.getContentPane().add(new Suelo(x,y));
-        this.pack();
+        //this.pack();
 
         this.setVisible(true);
         
