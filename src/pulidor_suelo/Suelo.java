@@ -3,7 +3,7 @@ package pulidor_suelo;
 import java.awt.*;
 import javax.swing.*;
 import java.util.Random;
-
+//HOLA
 public class Suelo extends JPanel {
     
     int filas_;
