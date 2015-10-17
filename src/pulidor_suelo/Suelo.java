@@ -6,17 +6,44 @@ import java.util.Random;
 
 public class Suelo extends JPanel {
     
-    //Baldosa suelo_[][] = new Baldosa [][];
+    int filas_;
+    int columnas_;
     
     public void paint (Graphics g){
+        Toolkit kit;
+        Dimension dimensionPantalla;
+        int altura;
+        int anchura;
+        kit = Toolkit.getDefaultToolkit();
+        dimensionPantalla = kit.getScreenSize();
+        altura = (int)dimensionPantalla.getHeight();
+        anchura = (int)dimensionPantalla.getWidth();
+        
+        int altoBaldosa = altura/filas_;
+        int anchoBaldosa = anchura/columnas_;
         g.setColor(Color.white);
-        g.fillRect(0,0,400,400);
+        g.fillRect(0,0,altoBaldosa,anchoBaldosa);
+        
+        for (int i=0; i<filas_; i++){
+            for (int j=0; j<columnas_; j++){
+                if ((i+j)%2 == 0){
+                    g.setColor(Color.black);
+                    g.fillRect(0+j*altoBaldosa, 0+i*anchoBaldosa, altoBaldosa, anchoBaldosa);
+                }
+                else{
+                    g.setColor(Color.white);
+                    g.fillRect(0+j*altoBaldosa, 0+i*anchoBaldosa, altoBaldosa, anchoBaldosa);
+                }
+            }
+        }
+        
+        
     }
     
     public Suelo(int filas, int columnas){
         super();
-        setSize(600,600);
-        setVisible(true);
+        filas_ = filas;
+        columnas_ = columnas;
         Baldosa suelo_[][] = new Baldosa [filas][columnas];
          
         Random rnd = new Random();
