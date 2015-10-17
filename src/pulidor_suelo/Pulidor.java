@@ -3,14 +3,26 @@ package pulidor_suelo;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
-//import pulidor_suelo.Pulidor;
 
 public class Pulidor extends JFrame {
     
+        public Toolkit kit;
+        public Dimension dimensionPantalla;
+        public int altura;
+        public int anchura;
+        
+    
     public Pulidor(int x, int y){
         super("Prueba");
-        this.setLayout(new GridLayout(x,y));
-        //this.setPreferredSize(x*10,y*10);
+        
+        kit = Toolkit.getDefaultToolkit();
+        dimensionPantalla = kit.getScreenSize();
+        altura = (int)dimensionPantalla.getHeight();
+        anchura = (int)dimensionPantalla.getWidth();
+
+        
+        //this.setLayout(new GridLayout(x,y));
+        this.setSize(altura,anchura);
         this.setBackground(Color.LIGHT_GRAY);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -41,7 +53,16 @@ public class Pulidor extends JFrame {
         Scanner popo = new Scanner(System.in);
         int columnas = popo.nextInt();
         
+
+        
         Pulidor pb = new Pulidor(filas,columnas);
        
+    }
+    
+    public int getAltura(){
+        return altura;
+    }
+    public int getAnchura(){
+        return anchura;
     }
 }
