@@ -10,7 +10,7 @@ public class Suelo extends JPanel {
     
     public void paint (Graphics g){
         g.setColor(Color.white);
-        //g.fillRect(100,100,400,400);
+        g.fillRect(0,0,400,400);
     }
     
     public Suelo(int filas, int columnas){
